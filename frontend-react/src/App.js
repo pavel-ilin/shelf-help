@@ -35,6 +35,7 @@ class App extends Component {
           <p>Publication year: {book.publication_year}</p>
           <p>Edited: {book.edited ? 'Yes' : 'No'}</p>
           <p>Tags: {tags.join(', ')}</p>
+          <p>Place for picture</p>
         </div>
       )
     })
