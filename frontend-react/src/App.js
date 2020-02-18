@@ -29,7 +29,7 @@ class App extends Component {
       })
 
       return (
-        <div>
+        <div key={book.id}>
           <p>Title: {book.title}</p>
           <p>Author: {book.author}</p>
           <p>Publication year: {book.publication_year}</p>
