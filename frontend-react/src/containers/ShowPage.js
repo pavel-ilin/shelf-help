@@ -11,9 +11,6 @@ class ShowPage extends Component {
             <p>Publication year: </p>
             <p>Edited: </p>
             <p>Tags: </p>
-            <div>
-              <p>Place for picture</p>
-            </div>
         </Fragment>
     )
   }

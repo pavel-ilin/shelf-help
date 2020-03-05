@@ -9,11 +9,9 @@ import PicturePlaceHolder from './containers/PicturePlaceHolder'
 
 
 const Wrapper = styled.section`
- padding: 2em;
+ padding: 3em;
  background: #191970;
  display: flex;
- align-items: center;
- justify-content: center;
 `;
 
 const Item = styled.h1`

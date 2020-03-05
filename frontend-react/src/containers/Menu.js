@@ -12,7 +12,6 @@ class Menu extends Component {
             <p>tag</p>
             <p>tag</p>
             <p>tag</p>
-            <p>tag</p>
           </div>
         </Fragment>
     )

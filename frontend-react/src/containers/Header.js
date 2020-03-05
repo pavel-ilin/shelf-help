@@ -14,10 +14,7 @@ class Header extends Component {
           </div>
 
           <div>
-            <form>
-                <label>Add new Book:<input type="text" name="add" /></label>
-                <input type="submit" value="add new book" />
-            </form>
+            Add new book
           </div>
         </Fragment>
     )
