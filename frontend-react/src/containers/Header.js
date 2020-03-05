@@ -14,7 +14,7 @@ class Header extends Component {
           </div>
 
           <div>
-            Add new book
+            Add new books
           </div>
         </Fragment>
     )
