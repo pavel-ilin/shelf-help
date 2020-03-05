@@ -5,6 +5,8 @@ import './App.css';
 import Header from './containers/Header'
 import Menu from './containers/Menu'
 import ShowPage from './containers/ShowPage'
+import PicturePlaceHolder from './containers/PicturePlaceHolder'
+
 
 const Wrapper = styled.section`
  padding: 2em;
@@ -12,7 +14,6 @@ const Wrapper = styled.section`
  display: flex;
  align-items: center;
  justify-content: center;
-
 `;
 
 const Item = styled.h1`
@@ -51,7 +52,7 @@ class App extends Component {
             <ShowPage />
           </Item>
           <Item>
-            <ShowPage />
+            <PicturePlaceHolder />
           </Item>
         </Wrapper>
       </Fragment>
