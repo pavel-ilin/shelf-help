@@ -1,21 +1,17 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import '../App.css';
 
-class Menu extends Component {
+const Menu = () => {
 
-  render(){
     return(
         <Fragment>
-          <div>
-            <p>tag tag tag tag tag</p>
-            <p>tag</p>
-            <p>tag</p>
-            <p>tag</p>
-            <p>tag</p>
-          </div>
+            <p>Science Fiction</p>
+            <p>Feminism</p>
+            <p>Transhumanism</p>
+            <p>Magic Realism</p>
+            <p>Socialism</p>
         </Fragment>
     )
-  }
 }
 
 export default Menu;

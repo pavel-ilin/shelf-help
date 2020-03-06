@@ -1,24 +1,36 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import '../App.css';
+import { Link } from 'react-router-dom'
+import styled from 'styled-components';
 
-class Header extends Component {
+const Head = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+  background: #7B68EE;
+  padding: 10px 10px 10px 10px;
+`;
 
-  render(){
+
+const Header = () => {
+
     return(
-        <Fragment>
+      <Fragment>
+        <Head>
+          <Link to='/'>Main menu</Link>
+
           <div>
             <form>
                 <label>Search:<input type="text" name="search" /></label>
-                <input type="submit" value="Search" />
+                <Link to='/search-results'><input type="submit" value="Search" /></Link>
             </form>
           </div>
 
-          <div>
-            Add new books
-          </div>
+          <Link to='/new'>Add new books</Link>
+        </Head>
         </Fragment>
     )
   }
-}
 
 export default Header;
