@@ -3,6 +3,7 @@ import '../App.css';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 
+
 const Head = styled.section`
   display: flex;
   align-items: center;
@@ -15,10 +16,11 @@ const Head = styled.section`
 
 const Header = () => {
 
+
     return(
       <Fragment>
         <Head>
-          <Link to='/'>Main menu</Link>
+          <Link to='/'><div>Main menu</div></Link>
 
           <div>
             <form>

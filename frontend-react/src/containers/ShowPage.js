@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import '../App.css';
 
 const ShowPage = (props) => {
+  console.log(props)
     return(
         <Fragment>
             <p>Title: </p>
