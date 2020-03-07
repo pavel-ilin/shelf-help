@@ -11,8 +11,9 @@ import NewBookForm from './containers/NewBookForm'
 import Menu from './containers/Menu'
 import BookList from './containers/BookList'
 import SearchResults from './containers/SearchResults'
-
 import ShowPage from './containers/ShowPage'
+
+import FrontPage from './components/FrontPage'
 
 
 const Wrapper = styled.section`
@@ -70,7 +71,7 @@ const App = () => {
               <Route path="/search-results"><Item><SearchResults /></Item></Route>
               <Route path="/tags/:slug" render={ renderTags } />
               <Route path="/books/:slug" render={ renderBook } />
-              <Route path="/"><Item><BookList /></Item></Route>
+              <Route path="/"><Item><FrontPage /></Item></Route>
             </Switch>
           </Fragment>
           }
