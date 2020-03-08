@@ -30,6 +30,17 @@ const Item = styled.div`
  idth: -webkit-fill-available;
 `;
 
+const MenuStyle = styled.div`
+ font-size: 1.5em;
+ text-align: left;
+ color: #F0FFF0;
+ margin-right: 10px;
+ border-style: solid;
+ padding: 10px;
+ idth: -webkit-fill-available;
+ max-width: 15%;
+`;
+
 
 const App = () => {
 
@@ -64,7 +75,7 @@ const App = () => {
             {!loading ? <Item><div>Loading</div></Item> :
 
             <Fragment>
-            <Item><Menu/></Item>
+            <MenuStyle><Menu/></MenuStyle>
 
             <Switch>
               <Route path="/new"><Item><NewBookForm /></Item></Route>
