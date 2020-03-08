@@ -25,7 +25,7 @@ const Header = () => {
           <div>
             <form>
                 <label>Search:<input type="text" name="search" /></label>
-                <Link to='/search-results'><input type="submit" value="Search" /></Link>
+                <Link to='/search-results'><input type="submit" value="Search"/></Link>
             </form>
           </div>
 

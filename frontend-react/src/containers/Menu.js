@@ -12,7 +12,7 @@ const Menu = () => {
       let id = 0
       return  tags.map(tag => {
           id++
-          return (<Tag id={id} tag={tag} />)
+          return (<Tag key={id} id={id}tag={tag} />)
         })
     }
 

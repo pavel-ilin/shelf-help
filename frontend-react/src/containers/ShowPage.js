@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
 
 const ShowPage = (props) => {
-  console.log(props)
+  // console.log(props)
     return(
         <Fragment>
-            <p>Title: </p>
+            <p>Title: {props.book.title}</p>
             <p>Author: {props.book.author} </p>
-            <p>Publication year: </p>
-            <p>Edited: </p>
-            <p>Tags: </p>
+            <p>Publication year: {props.book.publication_year}</p>
+            <p>Edition: {props.book.edition}</p>
+            <p>Edited: {props.book.edited? 'Yes' : 'No'}</p>
         </Fragment>
     )
 }

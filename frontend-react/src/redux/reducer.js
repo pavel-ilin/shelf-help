@@ -3,7 +3,8 @@ const initialState = {
   tagClick: null,
   tagClickReset: false,
   books: [],
-  tags: []
+  tags: [],
+  searchRequest: ''
 }
 
 const reducer = (oldState = initialState, action) => {

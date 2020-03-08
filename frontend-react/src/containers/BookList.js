@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 
 import Book from '../components/Book'
 
@@ -12,7 +11,7 @@ const BookList = (props) => {
     if(data.tagClick){
       return data.books.map(book => {
         if (book.all_tags.includes(data.tagClick)){
-          return (<Book book={book}/>)
+          return (<Book key={book.id} book={book}/>)
         }
           })
         }
@@ -20,7 +19,7 @@ const BookList = (props) => {
 
   const rootRender = () => {
     return  data.books.map(book => {
-        return (<Book book={book}/>)
+        return (<Book key={book.id} book={book}/>)
       })
   }
 

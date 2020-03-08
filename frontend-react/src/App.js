@@ -4,7 +4,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { setData, resetClick } from "./redux/actions";
+import { setData } from "./redux/actions";
 
 import Header from './containers/Header'
 import NewBookForm from './containers/NewBookForm'

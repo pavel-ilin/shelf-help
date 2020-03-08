@@ -4,7 +4,6 @@ import '../App.css';
 
 const FrontPage = () => {
 
-
     return(
       <Fragment>
         <p>I'm font page</p>
