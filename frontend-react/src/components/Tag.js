@@ -11,7 +11,6 @@ const Tag = (props) => {
       dispatch(tagClick(event.target.innerText))
     }
 
-    console.log(this)
     return(
         <Fragment>
             <Link to={`/tags/${props.id}`}><div onClick={onClick}>{props.tag}</div></Link>

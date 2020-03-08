@@ -15,21 +15,21 @@ import ShowPage from './containers/ShowPage'
 
 import FrontPage from './components/FrontPage'
 
-
 const Wrapper = styled.section`
  padding: 3em;
- background: #191970;
  display: flex;
 `;
 
-const Item = styled.h1`
+const Item = styled.div`
  font-size: 1.5em;
- text-align: center;
+ text-align: left;
  color: #F0FFF0;
  margin-right: 10px;
  border-style: solid;
  padding: 10px;
+ idth: -webkit-fill-available;
 `;
+
 
 const App = () => {
 

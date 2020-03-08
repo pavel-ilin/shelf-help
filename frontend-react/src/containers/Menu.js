@@ -10,7 +10,7 @@ const Menu = () => {
 
     const renderTags = () => {
       let id = 0
-      return  tags.map(tag => {
+      return  tags.sort().map(tag => {
           id++
           return (<Tag key={id} id={id}tag={tag} />)
         })
