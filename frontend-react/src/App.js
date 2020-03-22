@@ -30,6 +30,18 @@ const Item = styled.div`
  idth: -webkit-fill-available;
 `;
 
+const Form = styled.div`
+ display: flex;
+ flex: auto;
+ font-size: 1.5em;
+ text-align: left;
+ color: #F0FFF0;
+ margin-right: 10px;
+ border-style: solid;
+ padding: 10px;
+ idth: -webkit-fill-available;
+`;
+
 const MenuStyle = styled.div`
  font-size: 1.5em;
  text-align: left;
@@ -78,7 +90,7 @@ const App = () => {
             <MenuStyle><Menu/></MenuStyle>
 
             <Switch>
-              <Route path="/new"><Item><NewBookForm /></Item></Route>
+              <Route path="/new"><Form><NewBookForm /></Form></Route>
               <Route path="/search-results"><Item><SearchResults /></Item></Route>
               <Route path="/tags/:slug" render={ renderTags } />
               <Route path="/books/:slug" render={ renderBook } />
