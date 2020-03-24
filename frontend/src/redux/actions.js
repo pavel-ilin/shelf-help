@@ -67,7 +67,7 @@ export function createBook(data){
       book: {
         title: data.title,
         author: data.author,
-        publication_year: data.setPubYear,
+        publication_year: data.pubYear,
         edition: data.edition,
         edited: data.edited,
         tags: data.tags
@@ -76,7 +76,20 @@ export function createBook(data){
   })
   .then(r => r.json())
   .then(resp => {
-    console.log(resp)
+    if (resp.errors){
+      dispatch({
+        type: 'CREATE_BOOK',
+        book: {
+          errors: resp.errors
+        }
+      })
+    }
+    else {  
+      dispatch({
+        type: 'CREATE_BOOK',
+        book: resp
+      })
+    }
   })
 }
 

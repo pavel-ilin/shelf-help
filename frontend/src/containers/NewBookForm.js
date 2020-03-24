@@ -25,10 +25,10 @@ const NewBookForm = () => {
   const [author, setAuthor] = useState('')
   const [pubYear, setPubYear] = useState('')
   const [edited, setEdited] = useState('yes')
+  const [edition, setEdition] = useState('')
+
   const [newTag, setNewTag] = useState('')
   const [tags, setTags] = useState([])
-
-  console.log(initTags)
 
   const renderTags = () => {
     return initTags.map(tag => {
@@ -55,7 +55,7 @@ const NewBookForm = () => {
 
   const submitForm = (event) => {
     event.preventDefault();
-    const book = {title: title, author: author, pubYear: pubYear, edited: edited, tags: filteredTags}
+    const book = {title: title, author: author, pubYear: pubYear, edition: edition, edited: edited, tags: filteredTags}
     dispatch(createBook(book))
 
     setTitle('')
@@ -74,6 +74,8 @@ const NewBookForm = () => {
                 <input required type="text" value={author} onChange={e => setAuthor(e.target.value)}></input>
                 <lable>Publication Year:</lable>
                 <input required type="number" value={pubYear} onChange={e => setPubYear(e.target.value)}></input>
+                <lable>Edition:</lable>
+                <input required type="text" value={edition} onChange={e => setEdition(e.target.value)}></input>
                 <lable>Edited:</lable>
                 <select required value={edited} onChange={e => setEdited(e.target.value)}>
                   <option value='yes'>Yes</option>

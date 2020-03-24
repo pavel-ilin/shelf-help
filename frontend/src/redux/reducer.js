@@ -11,7 +11,7 @@ const initialState = {
 }
 
 const reducer = (oldState = initialState, action) => {
-  console.log(action)
+  // console.log(action)
   switch (action.type) {
     case 'LOAD_DATA':
       return {
@@ -46,7 +46,8 @@ const reducer = (oldState = initialState, action) => {
         return {
           ...oldState,
           books: [...oldState.books, action.book],
-          errors: action.tag.errors
+          tags: [...oldState.tags, ...action.book.all_tags],
+          errors: action.book.errors
         }
     default:
       return oldState

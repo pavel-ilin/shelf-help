@@ -1,5 +1,3 @@
-
-
 BookTag.destroy_all
 Book.destroy_all
 Tag.destroy_all

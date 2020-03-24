@@ -8,9 +8,11 @@ const Menu = () => {
 
     const tags = useSelector(item => item.tags)
 
+    let sortedTags = Array.from(new Set(tags))
+
     const renderTags = () => {
       let id = 0
-      return  tags.sort().map(tag => {
+      return  sortedTags.sort().map(tag => {
           id++
           return (<Tag key={id} id={id}tag={tag} />)
         })
