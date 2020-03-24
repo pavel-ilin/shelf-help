@@ -23,8 +23,6 @@ const BookList = (props) => {
       })
   }
 
-
-
     return(
       <Fragment>
         {data.tagClick ? booksRender() : rootRender()}
