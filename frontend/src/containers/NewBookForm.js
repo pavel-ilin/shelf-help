@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux'
-import { createTag } from "../redux/actions";
+import { createTag, createBook } from "../redux/actions";
 
 const Form = styled.form`
   display: grid;
@@ -16,18 +16,10 @@ const Ul = styled.ul`
 `
 
 const NewBookForm = () => {
-  const initTags = useSelector(item => item.tags)
+  const initTags = useSelector(item => item.allTags)
   const errors = useSelector(item => item.errors)
 
   const dispatch = useDispatch();
-
-  const [allTags, setAllTags] = useState(initTags)
-
-  const renderTags = () => {
-    return allTags.map(tag => {
-      return  <option value={`${tag}`}>{tag}</option>
-    })
-  }
 
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
@@ -35,6 +27,14 @@ const NewBookForm = () => {
   const [edited, setEdited] = useState('yes')
   const [newTag, setNewTag] = useState('')
   const [tags, setTags] = useState([])
+
+  console.log(initTags)
+
+  const renderTags = () => {
+    return initTags.map(tag => {
+      return  <option value={`${tag.title}`}>{tag.title}</option>
+    })
+  }
 
   const selectTags = (tag) => {
     setTags([...tags, tag])
@@ -56,7 +56,13 @@ const NewBookForm = () => {
   const submitForm = (event) => {
     event.preventDefault();
     const book = {title: title, author: author, pubYear: pubYear, edited: edited, tags: filteredTags}
-    console.log(book)
+    dispatch(createBook(book))
+
+    setTitle('')
+    setAuthor('')
+    setPubYear('')
+    setEdited('yes')
+    setNewTag('')
   }
 
   return(

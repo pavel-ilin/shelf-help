@@ -4,7 +4,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { setData } from "./redux/actions";
+import { setData, setTags } from "./redux/actions";
 
 import Header from './containers/Header'
 import NewBookForm from './containers/NewBookForm'
@@ -58,6 +58,8 @@ const App = () => {
 
   const data = useSelector(state => state)
   const loading = data.dataLoaded
+  const tagsLoading = data.tagsLoaded
+  
   const dispatch = useDispatch()
 
   const renderBook = (renderParams) => {
@@ -76,15 +78,19 @@ const App = () => {
     dispatch(setData())
   }
 
+  function onLoadTags () {
+    dispatch(setTags())
+  }
 
   return (
     <Fragment>
 
         {loading ? null : onLoad()}
+        {tagsLoading ? null : onLoadTags()}
 
         <Header/>
           <Wrapper>
-            {!loading ? <Item><div>Loading</div></Item> :
+            {!loading && !tagsLoading ? <Item><div>Loading</div></Item> :
 
             <Fragment>
             <MenuStyle><Menu/></MenuStyle>

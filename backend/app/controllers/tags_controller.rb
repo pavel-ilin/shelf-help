@@ -1,9 +1,12 @@
 class TagsController < ApplicationController
-
+    
+    def index
+        tags = Tag.all
+        render json: tags
+    end
 
     def create
         tag = Tag.find_by(title: params[:tag][:title])
-        puts(tag)
         if tag
             render json: {
                 errors: 'This tag is already exists!'

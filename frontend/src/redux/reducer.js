@@ -1,15 +1,17 @@
 const initialState = {
   errors: null,
   dataLoaded: false,
+  tagsLoaded: false,
   tagClick: null,
   tagClickReset: false,
+  allTags: [],
   books: [],
   tags: [],
   searchRequest: ''
 }
 
 const reducer = (oldState = initialState, action) => {
-  // console.log(action)
+  console.log(action)
   switch (action.type) {
     case 'LOAD_DATA':
       return {
@@ -17,6 +19,12 @@ const reducer = (oldState = initialState, action) => {
         dataLoaded: action.data.dataLoaded,
         books: action.data.books,
         tags: action.data.tags
+      }
+    case 'SET_TAGS':
+      return {
+        ...oldState,
+        allTags: action.tags,
+        tagsLoaded: action.tagsLoaded
       }
     case 'TAG_CLICK':
       return {
@@ -31,7 +39,13 @@ const reducer = (oldState = initialState, action) => {
       case 'CREATE_TAG':
         return {
           ...oldState,
-          tags: [...oldState.tags, action.tag.title],
+          allTags: [...oldState.allTags, action.tag],
+          errors: action.tag.errors
+        }
+        case 'CREATE_BOOK':
+        return {
+          ...oldState,
+          books: [...oldState.books, action.book],
           errors: action.tag.errors
         }
     default:

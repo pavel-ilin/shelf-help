@@ -6,19 +6,21 @@ class BooksController < ApplicationController
   end
 
   def create
-    # byebug
+    tags = params[:book][:tags]
     book = Book.create(submit_params)
-    tags = params[:tags]
 
-
+    tags.each { |tag|
+      selected_tag = Tag.find_by(title: tag)
+      
+      BookTag.create(book: book, tag: selected_tag)
+    }
     render json: book
   end
 
   private
 
   def submit_params
-    params.require(:book).permit(:title, :author, :publication_year, :edition, :edited)
+    params.require(:book).permit(:title, :author, :publication_year, :edition, :edited, { tags: [:tags]})
   end
-
 
 end
