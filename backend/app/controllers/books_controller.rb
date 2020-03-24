@@ -6,7 +6,11 @@ class BooksController < ApplicationController
   end
 
   def create
+    # byebug
     book = Book.create(submit_params)
+    tags = params[:tags]
+
+
     render json: book
   end
 

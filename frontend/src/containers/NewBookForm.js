@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { createTag } from "../redux/actions";
 
 const Form = styled.form`
   display: grid;
@@ -16,6 +17,10 @@ const Ul = styled.ul`
 
 const NewBookForm = () => {
   const initTags = useSelector(item => item.tags)
+  const errors = useSelector(item => item.errors)
+
+  const dispatch = useDispatch();
+
   const [allTags, setAllTags] = useState(initTags)
 
   const renderTags = () => {
@@ -45,7 +50,7 @@ const NewBookForm = () => {
 
   const addTag = (event) => {
     event.preventDefault();
-    setAllTags([...allTags, newTag]) 
+    dispatch(createTag(newTag))
   }
 
   const submitForm = (event) => {
@@ -58,25 +63,26 @@ const NewBookForm = () => {
         <Fragment>
               <Form onSubmit={submitForm}>
                 <lable>Title:</lable>
-                <input type="text" value={title} onChange={e => setTitle(e.target.value)}></input>
+                <input required type="text" value={title} onChange={e => setTitle(e.target.value)}></input>
                 <lable>Author:</lable>
-                <input type="text" value={author} onChange={e => setAuthor(e.target.value)}></input>
+                <input required type="text" value={author} onChange={e => setAuthor(e.target.value)}></input>
                 <lable>Publication Year:</lable>
-                <input type="text" value={pubYear} onChange={e => setPubYear(e.target.value)}></input>
+                <input required type="number" value={pubYear} onChange={e => setPubYear(e.target.value)}></input>
                 <lable>Edited:</lable>
-                <select value={edited} onChange={e => setEdited(e.target.value)}>
+                <select required value={edited} onChange={e => setEdited(e.target.value)}>
                   <option value='yes'>Yes</option>
                   <option value='no'>No</option>
                 </select>
                 <lable>Tags:</lable>
-                <select multiple onChange={e => selectTags(e.target.value)}>
+                <select required multiple onChange={e => selectTags(e.target.value)}>
                   {renderTags()}
                 </select>
                 <input type="submit" value="Submit" />
               </Form>
 
               <Form>
-                <br /> 
+                {errors ? <div>{errors}</div> : null}
+                <br />
                 <input type="text" valu={newTag} onChange={e => setNewTag(e.target.value)}></input>
                 <button onClick={addTag}>Add tag</button>
               </Form>
@@ -84,8 +90,6 @@ const NewBookForm = () => {
               <Tags>
                   <Ul>{renderSelectedTags()}</Ul>
               </Tags>
-              
-                
         </Fragment>
     )
 }

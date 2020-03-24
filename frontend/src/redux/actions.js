@@ -32,10 +32,42 @@ export function tagClickReset (data) {
   }
 }
 
+export function createTag (data) {
+  return (dispatch) => fetch(localhostUrl + 'tags', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      tag: {
+        title: data
+      }
+    })
+  })
+  .then(r => r.json())
+  .then(resp => {
+    if (resp.errors){
+      dispatch({
+        type: 'CREATE_TAG',
+        tag: {
+          errors: resp.errors
+        }
+      })
+    }
+    else {
+      dispatch({
+        type: 'CREATE_TAG',
+        tag: {
+          title: resp.title
+        }
+      })
+    }
+  })
+}
+
 
 const actions = {
   setData,
-  tagClick
+  tagClick,
+  createTag
 }
 
 export default actions

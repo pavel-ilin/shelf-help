@@ -1,4 +1,5 @@
 const initialState = {
+  errors: null,
   dataLoaded: false,
   tagClick: null,
   tagClickReset: false,
@@ -27,9 +28,14 @@ const reducer = (oldState = initialState, action) => {
           ...oldState,
           tagClick: action.tagClick
         }
+      case 'CREATE_TAG':
+        return {
+          ...oldState,
+          tags: [...oldState.tags, action.tag.title],
+          errors: action.tag.errors
+        }
     default:
       return oldState
   }
 }
-
 export default reducer
