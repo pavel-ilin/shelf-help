@@ -9,7 +9,7 @@ const FrontPage = () => {
 
 
   const rootRender = () => {
-    return  books.map(book => {
+    return  books.reverse().slice(0, 10).map(book => {
         return (<Book key={book.id} book={book}/>)
       })
   }
