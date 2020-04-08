@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+import { Container } from '@material-ui/core';
 
 import { setData, setTags } from "./redux/actions";
 
@@ -16,7 +17,7 @@ import ShowPage from './containers/ShowPage'
 import FrontPage from './components/FrontPage'
 
 const Wrapper = styled.section`
- padding: 3em;
+ padding: 2%;
  display: flex;
 `;
 
@@ -50,7 +51,6 @@ const MenuStyle = styled.div`
  border-style: solid;
  padding: 10px;
  idth: -webkit-fill-available;
- max-width: 15%;
 `;
 
 
