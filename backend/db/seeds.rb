@@ -8,6 +8,7 @@ book3 = Book.create(title: 'Yes Means Yes: Visions of Female Sexual Power & a Wo
 book4 = Book.create(title: "Women's Liberation and the Dialectics of Revolution: Reaching for the Future", author: "Raya Dunayevskaya", publication_year: 1985, edition: '', edited: false)
 book5 = Book.create(title: 'African Feminism: the Politics of Surival in Sub-Saharan Africa', author: "Gwendolyn Mikell", publication_year: 1997, edition: '', edited: true)
 book6 = Book.create(title: 'Politics of the Womb: Women, Reproduction, and the State in Kenya', author: "Lynn M. Thomas", publication_year: 2003, edition: '1', edited: false)
+book7 = Book.create(title: 'Point Counter Point (British Literature)', author: "Aldous Huxley", publication_year: 1996, edition: '1', edited: false)
 
 tag1 = Tag.create(title: 'Feminism')
 tag2 = Tag.create(title: 'Reproductive Health Freedom Rights')
@@ -32,16 +33,7 @@ tag20 = Tag.create(title: 'Movement-building')
 tag21 = Tag.create(title: 'Political Figures')
 tag22 = Tag.create(title: 'Magical Realism')
 tag23 = Tag.create(title: 'Read')
-
-book_tag27 = BookTag.create(book: book6, tag: tag2)
-book_tag28 = BookTag.create(book: book6, tag: tag3)
-book_tag29 = BookTag.create(book: book6, tag: tag4)
-book_tag30 = BookTag.create(book: book6, tag: tag5)
-book_tag31 = BookTag.create(book: book6, tag: tag6)
-book_tag31 = BookTag.create(book: book6, tag: tag7)
-book_tag31 = BookTag.create(book: book6, tag: tag8)
-book_tag31 = BookTag.create(book: book6, tag: tag23)
-
+tag24 = Tag.create(title: 'Someday')
 
 book_tag1 = BookTag.create(book: book1, tag: tag1)
 book_tag2 = BookTag.create(book: book1, tag: tag6)
@@ -76,5 +68,16 @@ book_tag23 = BookTag.create(book: book5, tag: tag1)
 book_tag24 = BookTag.create(book: book5, tag: tag5)
 book_tag25 = BookTag.create(book: book5, tag: tag7)
 book_tag26 = BookTag.create(book: book5, tag: tag4)
+
+book_tag27 = BookTag.create(book: book6, tag: tag2)
+book_tag28 = BookTag.create(book: book6, tag: tag3)
+book_tag29 = BookTag.create(book: book6, tag: tag4)
+book_tag30 = BookTag.create(book: book6, tag: tag5)
+book_tag31 = BookTag.create(book: book6, tag: tag6)
+book_tag31 = BookTag.create(book: book6, tag: tag7)
+book_tag31 = BookTag.create(book: book6, tag: tag8)
+book_tag31 = BookTag.create(book: book6, tag: tag23)
+
+book_tag32 = BookTag.create(book: book7, tag: tag24)
 
 puts 'All done!!!!!'
