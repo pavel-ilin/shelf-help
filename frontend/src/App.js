@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { Container } from '@material-ui/core';
+// import { Container } from '@material-ui/core';
 
 import { setData, setTags } from "./redux/actions";
 
@@ -17,7 +17,7 @@ import ShowPage from './containers/ShowPage'
 import FrontPage from './components/FrontPage'
 
 const Wrapper = styled.section`
- padding: 2%;
+ padding: 1%;
  display: flex;
 `;
 
@@ -55,46 +55,35 @@ const MenuStyle = styled.div`
 
 
 const App = () => {
-
+  const dispatch = useDispatch()
   const data = useSelector(state => state)
   const loading = data.dataLoaded
-  const tagsLoading = data.tagsLoaded
-  
-  const dispatch = useDispatch()
 
   const renderBook = (renderParams) => {
-    const slug = parseInt(renderParams.match.params.slug)
-    const book = data.books.find(item => item.id === slug)
-    return <Item><ShowPage book={book}/></Item>
+      const slug = parseInt(renderParams.match.params.slug)
+      const book = data.books.find(item => item.id === slug)
+      return <Item><ShowPage book={book}/></Item>
   }
 
-  const renderTags = (renderParams) => {
-    const slug = parseInt(renderParams.match.params.slug)
+  const renderTags = () => {
     return <Item><BookList /></Item>
   }
 
 
   function onLoad () {
-    dispatch(setData())
-  }
-
-  function onLoadTags () {
     dispatch(setTags())
+    dispatch(setData())
   }
 
   return (
     <Fragment>
-
-        {loading ? null : onLoad()}
-        {tagsLoading ? null : onLoadTags()}
-
+        {!loading && onLoad()}
         <Header/>
           <Wrapper>
-            {!loading && !tagsLoading ? <Item><div>Loading</div></Item> :
+            {!loading ? <Item><div>Loading</div></Item> :
 
             <Fragment>
             <MenuStyle><Menu/></MenuStyle>
-
             <Switch>
               <Route path="/new"><Form><NewBookForm /></Form></Route>
               <Route path="/search-results"><Item><SearchResults /></Item></Route>

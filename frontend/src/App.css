@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+a {
+  color: green;
+  font-family: helvetica;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+}
+
+a:visited {
+  color: green;
+}
+
+p {
+  color: orange;
+}

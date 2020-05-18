@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+
 import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux'
 
@@ -13,8 +15,9 @@ const BookList = (props) => {
         if (book.all_tags.includes(data.tagClick)){
           return (<Book key={book.id} book={book}/>)
         }
-          })
-        }
+        return null
+      })
+    }
   }
 
   const rootRender = () => {

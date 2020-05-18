@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 
 const ShowPage = (props) => {
-  // console.log(props)
     return(
         <Fragment>
             <p>Title: {props.book.title}</p>

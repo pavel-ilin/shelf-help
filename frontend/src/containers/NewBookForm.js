@@ -32,7 +32,7 @@ const NewBookForm = () => {
 
   const renderTags = () => {
     return initTags.map(tag => {
-      return  <option value={`${tag.title}`}>{tag.title}</option>
+      return  <option key={tag.id} value={`${tag.title}`}>{tag.title}</option>
     })
   }
 
