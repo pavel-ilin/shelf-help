@@ -1,9 +1,9 @@
 import { filterTags } from '../services/internalServices'
 
-const localhostUrl = 'http://localhost:3000/'
+const urlInUse = 'https://shelf-help-library.herokuapp.com/'
 
 export function setData () {
-  return (dispatch) => fetch(localhostUrl + 'books')
+  return (dispatch) => fetch(urlInUse + 'books')
     .then(r => r.json())
     .then(resp => {
       let tags = filterTags(resp)
@@ -19,7 +19,7 @@ export function setData () {
 }
 
 export function setTags () {
-  return (dispatch) => fetch(localhostUrl + 'tags')
+  return (dispatch) => fetch(urlInUse + 'tags')
     .then(r => r.json())
     .then(resp => {
       dispatch({
@@ -31,7 +31,7 @@ export function setTags () {
 }
 
 export function createTag (data) {
-  return (dispatch) => fetch(localhostUrl + 'tags', {
+  return (dispatch) => fetch(urlInUse + 'tags', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -60,7 +60,7 @@ export function createTag (data) {
 }
 
 export function createBook(data){
-  return (dispatch) => fetch(localhostUrl + 'books', {
+  return (dispatch) => fetch(urlInUse + 'books', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
