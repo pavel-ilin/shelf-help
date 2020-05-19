@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-// import { Container } from '@material-ui/core';
 
 import { setData, setTags } from "./redux/actions";
 

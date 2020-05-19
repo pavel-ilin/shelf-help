@@ -58,3 +58,15 @@ a:visited {
 p {
   color: orange;
 }
+
+.input {
+  background-color: bisque;
+}
+
+.button {
+  height: 56px;
+}
+
+.inputContainer {
+  display: flex;
+}
