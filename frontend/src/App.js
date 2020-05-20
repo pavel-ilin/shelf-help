@@ -21,6 +21,8 @@ const Wrapper = styled.section`
 `;
 
 const Item = styled.div`
+ display: flex;
+ flex-flow: column;
  font-size: 1.5em;
  text-align: left;
  color: #F0FFF0;
@@ -28,6 +30,7 @@ const Item = styled.div`
  border-style: solid;
  padding: 10px;
  idth: -webkit-fill-available;
+
 `;
 
 const Form = styled.div`

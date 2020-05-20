@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux'
 import { createTag, createBook } from "../redux/actions";
+import { TextField, Button } from '@material-ui/core';
 
 const Form = styled.form`
   display: grid;
@@ -67,7 +68,9 @@ const NewBookForm = () => {
 
   return(
         <Fragment>
+          <div>
               <Form onSubmit={submitForm}>
+                
                 <lable>Title:</lable>
                 <input required type="text" value={title} onChange={e => setTitle(e.target.value)}></input>
                 <lable>Author:</lable>
@@ -87,15 +90,14 @@ const NewBookForm = () => {
                 </select>
                 <input type="submit" value="Submit" />
               </Form>
-
               <Form>
                 {errors ? <div>{errors}</div> : null}
                 <br />
-                <input type="text" valu={newTag} onChange={e => setNewTag(e.target.value)}></input>
-                <button onClick={addTag}>Add tag</button>
+                <TextField className={'input'} id="outlined-basic" label="Tags" variant="outlined" value={newTag} onChange={e => setNewTag(e.target.value)}></TextField>
+                <Button className={'button'} variant="contained" color="primary" onClick={addTag}>Add tag</Button>
               </Form>
-
-              <Tags>
+            </div>
+            <Tags>
                   <Ul>{renderSelectedTags()}</Ul>
               </Tags>
         </Fragment>
