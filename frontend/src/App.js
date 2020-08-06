@@ -30,7 +30,6 @@ const Item = styled.div`
  border-style: solid;
  padding: 10px;
  idth: -webkit-fill-available;
-
 `;
 
 const Form = styled.div`

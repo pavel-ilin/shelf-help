@@ -107,12 +107,25 @@ export function tagClickReset (data) {
   }
 }
 
+
+  export function searchAction () {
+    return (dispatch) => fetch(urlInUse + 'books')
+      .then(r => r.json())
+      .then(resp => {
+        dispatch({
+          type: 'SEARCH_ACTION',
+        })
+      })
+  }
+      
+
 const actions = {
   setData,
   setTags,
   tagClick,
   createTag,
-  createBook
+  createBook,
+  searchAction
 }
 
 export default actions

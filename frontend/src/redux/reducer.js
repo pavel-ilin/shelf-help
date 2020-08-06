@@ -31,24 +31,24 @@ const reducer = (oldState = initialState, action) => {
         ...oldState,
         tagClick: action.tagClick,
       }
-      case 'TAG_CLICK_RESET':
-        return {
-          ...oldState,
-          tagClick: action.tagClick
-        }
-      case 'CREATE_TAG':
-        return {
-          ...oldState,
-          allTags: [...oldState.allTags, action.tag],
-          errors: action.tag.errors
-        }
-        case 'CREATE_BOOK':
-        return {
-          ...oldState,
-          books: [...oldState.books, action.book],
-          tags: [...oldState.tags, ...action.book.all_tags],
-          errors: action.book.errors
-        }
+    case 'TAG_CLICK_RESET':
+      return {
+        ...oldState,
+        tagClick: action.tagClick
+      }
+    case 'CREATE_TAG':
+      return {
+        ...oldState,
+        allTags: [...oldState.allTags, action.tag],
+        errors: action.tag.errors
+      }
+    case 'CREATE_BOOK':
+      return {
+        ...oldState,
+        books: [...oldState.books, action.book],
+        tags: [...oldState.tags, ...action.book.all_tags],
+        errors: action.book.errors
+      }
     default:
       return oldState
   }
