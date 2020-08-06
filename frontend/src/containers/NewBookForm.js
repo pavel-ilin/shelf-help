@@ -70,7 +70,6 @@ const NewBookForm = () => {
         <Fragment>
           <div>
               <Form onSubmit={submitForm}>
-                
                 <lable>Title:</lable>
                 <input required type="text" value={title} onChange={e => setTitle(e.target.value)}></input>
                 <lable>Author:</lable>
@@ -88,7 +87,7 @@ const NewBookForm = () => {
                 <select required multiple onChange={e => selectTags(e.target.value)}>
                   {renderTags()}
                 </select>
-                <input type="submit" value="Submit" />
+                <Button className={'button'} variant="contained" color="primary" type="submit" value="Submit" >Submit</Button>
               </Form>
               <Form>
                 {errors ? <div>{errors}</div> : null}
